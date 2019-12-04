@@ -1,37 +1,44 @@
-<!-- Déclaration de 2 variables age et gender -->
 <?php
-$age=20;
-$gender='femme';
+// Déclaration de la variable Woman
+$gender = 'Woman';
+// Déclaration de la variable age
+$age = 20;
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <meta charset="utf-8"/>
-  <title>PHP2Ex2</title>
+  <meta charset="utf-8" />
+  <title>PHPPartie2Exo2</title>
 </head>
 <body>
-  <!-- Déclaration d'un paragraphe -->
-  <p><?php
-  // Si c'est un homme ayant 18 ans ou plus alors texte suivant (Vous êtes....)
-  if($age>=18 AND $gender=='homme')
-  {
-    echo'Vous êtes un homme et vous êtes majeur';
-  }
-  // Sinon si c'est un homme ayant moins de 18 ans alors le texte suivant (Vous êtes..)
-  elseif($age<=17 AND $gender=='homme')
-  {
-    echo'Vous êtes un homme et vous êtes mineur';
-  }
-  // Si vous êtes une femme ayant 18 ans ou plus alors le texte suivant (Vous êtes...)
-  if($age>=18 AND $gender=='femme')
-  {
-    echo'Vous êtes une femme et vous êtes majeure';
-  }
-  // Sinon si vous êtes une femme ayant moins de 18 ans alors le texte suivant(Vous êtes ...)
-  elseif($age<=17 AND $gender=='femme')
-  {
-    echo'Vous êtes une femme et vous êtes mineure';
-  }
-  ?></p>
+  <p>
+    <?php
+    // Déclaration de la condition if pour l'âge compris entre 0 et 100 ans
+    if ($age > 0 && $age < 100){
+      // Déclaration de if et de la variable gender pour le genre et être majeur
+      if ($gender == 'Man' && $age >= 18){
+        ?>
+        Vous êtes un homme et vous êtes majeur
+        <!-- Condition elseif pour le genre masculin et être mineur -->
+      <?php }elseif($gender == 'Man' && $age < 18) { ?>
+        Vous êtes un homme et vous êtes mineur
+        <!-- Condition elseif pour le genre féminin et être majeur -->
+      <?php }elseif($gender == 'Woman' && $age >= 18) { ?>
+        Vous êtes une femme et vous êtes majeure
+        <!-- Condition elseif pour le genre féminin et inférieur à 18 ans -->
+      <?php }elseif($gender == 'Woman' && $age < 18) { ?>
+        Vous êtes une femme et vous êtes mineure
+        <!-- sinon le genre n'est pas valide -->
+      <?php }else{ ?>
+        erreur le genre n'est pas valide
+        <?php
+      }
+      // Sinon l'âge est non valide
+    }else{
+      ?>
+      age non valide
+    <?php } ?>
+  </p>
 </body>
 </html>
+© 2019 GitHub, Inc.
